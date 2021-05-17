@@ -17,7 +17,6 @@ function App() {
     <main>
       <h1>Max Mohammadi</h1>
       <h2>Portfolio</h2>
-      <Birds/>
     </main>
   );
 }
