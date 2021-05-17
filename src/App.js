@@ -14,19 +14,8 @@ function App() {
   }, []);
   return (
     <main>
-      <h1>Create React App + Go API</h1>
-      <h2>
-        Deployed with{' '}
-        <a
-          href="https://vercel.com/docs"
-          target="_blank"
-          rel="noreferrer noopener"
-        >
-          Vercel
-        </a>
-        !
-      </h2>
-
+      <h1>Max Mohammadi</h1>
+      <h2>Portfolio</h2>
     </main>
   );
 }
