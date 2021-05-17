@@ -1,6 +1,7 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
 import './App.css';
+import Birds from './components/Birds.js'
 
 function App() {
   const [date, setDate] = useState(null);
@@ -16,6 +17,7 @@ function App() {
     <main>
       <h1>Max Mohammadi</h1>
       <h2>Portfolio</h2>
+      <Birds/>
     </main>
   );
 }
