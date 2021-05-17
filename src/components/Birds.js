@@ -16,7 +16,7 @@ class Birds extends React.Component {
     }
     render() {
       return <div ref={this.vantaRef}>
-        Foreground content goes here
+        <h1>hello</h1>
       </div>
     }
 }
