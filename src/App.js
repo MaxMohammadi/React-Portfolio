@@ -1,7 +1,7 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
 import './App.css';
-import Waves from './components/Waves'
+import Waves from './components/Waves.jsx'
 
 function App() {
 
