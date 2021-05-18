@@ -1,39 +1,57 @@
-import React, { useRef, useState } from 'react'
-import { Canvas, useFrame } from '@react-three/fiber'
-import './App.css';
+// import './App.css';
+import { Scene, Matrix4 } from 'three'
+import React, { useRef, useMemo, useState } from 'react'
+import { Canvas, useFrame, useThree, createPortal } from '@react-three/fiber'
+import { OrbitControls, OrthographicCamera, useCamera } from '@react-three/drei'
 
+function Viewcube() {
+  const { gl, scene, camera, size } = useThree()
+  const virtualScene = useMemo(() => new Scene(), [])
+  const virtualCam = useRef()
+  const ref = useRef()
+  const [hover, set] = useState(null)
+  const matrix = new Matrix4()
 
-function Box(props) {
-  // This reference will give us direct access to the mesh
-  const mesh = useRef()
-  // Set up state for the hovered and active state
-  const [hovered, setHover] = useState(false)
-  const [active, setActive] = useState(false)
-  // Subscribe this component to the render-loop, rotate the mesh every frame
-  useFrame((state, delta) => (mesh.current.rotation.x += 0.01))
-  // Return view, these are regular three.js elements expressed in JSX
-  return (
-    <mesh
-      {...props}
-      ref={mesh}
-      scale={active ? 1.5 : 1}
-      onClick={(event) => setActive(!active)}
-      onPointerOver={(event) => setHover(true)}
-      onPointerOut={(event) => setHover(false)}
-    >
-      <boxGeometry args={[1, 1, 1]} />
-      <meshStandardMaterial color={hovered ? 'hotpink' : 'orange'} />
-    </mesh>
+  useFrame(() => {
+    matrix.copy(camera.matrix).invert()
+    ref.current.quaternion.setFromRotationMatrix(matrix)
+    gl.autoClear = true
+    gl.render(scene, camera)
+    gl.autoClear = false
+    gl.clearDepth()
+    gl.render(virtualScene, virtualCam.current)
+  }, 1)
+
+  return createPortal(
+    <>
+      <OrthographicCamera ref={virtualCam} makeDefault={false} position={[0, 0, 100]} />
+      <mesh
+        ref={ref}
+        raycast={useCamera(virtualCam)}
+        position={[size.width / 2 - 80, size.height / 2 - 80, 0]}
+        onPointerOut={(e) => set(null)}
+        onPointerMove={(e) => set(Math.floor(e.faceIndex / 2))}>
+        {[...Array(6)].map((_, index) => (
+          <meshLambertMaterial attachArray="material" key={index} color={hover === index ? 'hotpink' : 'white'} />
+        ))}
+        <boxGeometry args={[60, 60, 60]} />
+      </mesh>
+      <ambientLight intensity={0.5} />
+      <pointLight position={[10, 10, 10]} intensity={0.5} />
+    </>,
+    virtualScene
   )
 }
 
 function App() {
   return (
     <Canvas>
-      <ambientLight />
-      <pointLight position={[10, 10, 10]} />
-      <Box position={[-1.2, 0, 0]} />
-      <Box position={[1.2, 0, 0]} />
+      <mesh>
+        <torusGeometry args={[1, 0.5, 32, 100]} />
+        <meshNormalMaterial />
+      </mesh>
+      <OrbitControls screenSpacePanning />
+      <Viewcube />
     </Canvas>
   );
 }
