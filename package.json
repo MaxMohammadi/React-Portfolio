@@ -8,6 +8,7 @@
     "react-scripts": "2.1.1",
     "react-three-fiber": "^6.0.13",
     "three": "^0.128.0",
+    "use-cannon": "^0.5.3",
     "vanta": "^0.5.21"
   },
   "scripts": {
