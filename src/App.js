@@ -1,9 +1,9 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
 import './App.css';
-import Birds from './components/Birds.js'
 
 function App() {
+  var Template = require('./components/Waves');
   const [date, setDate] = useState(null);
   useEffect(() => {
     async function getDate() {
@@ -13,6 +13,14 @@ function App() {
     }
     getDate();
   }, []);
+  module.exports = React.createClass({
+    render: function() {
+      var bar = 'baz';
+      return(
+        <Waves foo={bar}/>
+      );
+    }
+  });
   return (
     <main>
       <h1>Max Mohammadi</h1>
