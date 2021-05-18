@@ -2,6 +2,8 @@ import React from 'react';
 import { useEffect, useState } from 'react';
 import './App.css';
 import { Canvas } from "react-three-fiber"
+import { Physics, usePlane, useBox } from "use-cannon";
+import { OrbitControls, Stars } from "drei";
 
 function Box(props) {
   const [ref, api] = useBox(() => ({ mass: 1, position: [0, 2, 0] }));
