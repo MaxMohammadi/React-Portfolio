@@ -1,9 +1,10 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
 import './App.css';
+import Waves from './components/Waves'
 
 function App() {
-  var Waves = require('./components/Waves');
+
   const [date, setDate] = useState(null);
   useEffect(() => {
     async function getDate() {
@@ -13,18 +14,12 @@ function App() {
     }
     getDate();
   }, []);
-  module.exports = React.createClass({
-    render: function() {
-      var bar = 'baz';
-      return(
-        <Waves foo={bar}/>
-      );
-    }
-  });
+
   return (
     <main>
       <h1>Max Mohammadi</h1>
       <h2>Portfolio</h2>
+      <Waves/>
     </main>
   );
 }
