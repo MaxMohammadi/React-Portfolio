@@ -1,7 +1,6 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
 import './App.css';
-import Waves from './components/Waves.jsx'
 
 function App() {
 
@@ -19,7 +18,6 @@ function App() {
     <main>
       <h1>Max Mohammadi</h1>
       <h2>Portfolio</h2>
-      <Waves/>
     </main>
   );
 }
