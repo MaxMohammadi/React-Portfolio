@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import './App.css';
 
 function App() {
-  var Template = require('./components/Waves');
+  var Waves = require('./components/Waves');
   const [date, setDate] = useState(null);
   useEffect(() => {
     async function getDate() {

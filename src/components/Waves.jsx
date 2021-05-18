@@ -1,3 +1,5 @@
+import React from 'react';
+
 module.exports = function(props) {
     return (
         <div className='foo'>
@@ -7,3 +9,5 @@ module.exports = function(props) {
         </div>
     );
 };
+
+export default Waves;
