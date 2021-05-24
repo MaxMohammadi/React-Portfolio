@@ -4,16 +4,12 @@
   "private": true,
   "dependencies": {
     "@react-three/drei": "^5.0.0",
-    "@react-three/fiber": "^6.1.4",
-    "drei": "^2.2.21",
-    "react": "^16.6.1",
+    "@react-three/fiber": "^6.1.5",
+    "react": "^17.0.2",
     "react-dom": "^16.6.1",
     "react-scripts": "2.1.1",
     "react-three-fiber": "^6.0.13",
-    "three": "^0.128.0",
-    "three-subdivision-modifier": "^1.0.5",
-    "use-cannon": "^0.5.3",
-    "vanta": "^0.5.21"
+    "three": "^0.128.0"
   },
   "scripts": {
     "dev": "BROWSER=none react-scripts start",
