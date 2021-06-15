@@ -1,3 +1,7 @@
+# Portfolio Markdown Blog
+
+This will be a section of my portfolio page, in the form of a tab. This will also be shown as a project in my projects dashboard.
+
 # React Example
 
 This directory is a brief example of a [React](https://reactjs.org/) app with [Serverless Functions](https://vercel.com/docs/v2/serverless-functions/introduction) that can be deployed with Vercel and zero configuration.
