@@ -1,6 +1,7 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
-import { SiEthereum } from "react-icons/im";
+import { TiVendorApple } from "react-icons/ti";
+
 
 function AboutCard() {
   return (
@@ -17,13 +18,13 @@ function AboutCard() {
           </p>
           <ul>
             <li className="about-activity">
-              <SiEthereum /> Distance Running
+              <TiVendorApple /> Distance Running
             </li>
             <li className="about-activity">
-              <SiEthereum /> Mountain Biking
+              <TiVendorApple /> Mountain Biking
             </li>
             <li className="about-activity">
-              <SiEthereum /> Studying the Markets
+              <TiVendorApple /> Studying Markets
             </li>
           </ul>
 
