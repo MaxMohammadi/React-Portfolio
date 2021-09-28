@@ -4,7 +4,6 @@
 - Node.js
 - Express.js
 - CSS3
-- VsCode
 - Vercel
 
 ## Installation and Setup Instructions
