@@ -8,6 +8,9 @@ import {
 } from "react-icons/ai";
 import { FaLinkedinIn, FaMedium } from "react-icons/fa";
 import { TiVendorApple } from "react-icons/ti";
+import Button from "react-bootstrap/Button";
+import "../../style.css";
+import PDF from "../../Max_Mohammadi_Resume_Blockchain.pdf";
 
 function Home2() {
   return (
@@ -51,7 +54,17 @@ function Home2() {
             </Tilt>
           </Col>
         </Row>
-        <Row>
+        <Row style={{ justifyContent: "center", padding: "10px" }}>
+          <div md={7}
+            style={{
+              justifyContent: "center",
+              paddingTop: "30px",
+              paddingBottom: "50px",
+            }}>
+          <Button variant="primary" href={PDF} target="_blank" size="lg">
+            Resume
+          </Button>
+          </div>
           <Col md={12} className="home-about-social">
             <h1>FOLLOW ME</h1>
             <p>
